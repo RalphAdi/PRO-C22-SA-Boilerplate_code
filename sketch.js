@@ -27,18 +27,20 @@ function setup() {
   tower = Bodies.rectangle(160, 350, 160, 310, options);
   World.add(world, tower);
 
+
+cannon = new Cannon(180, 110, 130, 100, angle);
 }
 
 function draw() {
+  
   image(backgroundImg,0,0,1200,600)
+  
   Engine.update(engine);
-
-  
   rect(ground.position.x, ground.position.y, width * 2, 1);
-  
-
   push();
   imageMode(CENTER);
   image(towerImage,tower.position.x, tower.position.y, 160, 310);
   pop();  
+
+  cannon.display();
 }
